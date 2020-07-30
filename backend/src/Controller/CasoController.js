@@ -1,5 +1,4 @@
 const connection = require('../database/connection');
-const connection = require('./UserController');
 
     module.exports = {
         async index(req,res) {
@@ -12,7 +11,7 @@ const connection = require('./UserController');
             .limit(5)
             .offset((page - 1) * 5)
             .select([
-                'incidents.*',
+                'casos.*',
                 'user.name',
                 'user.email',
                 'user.whatsapp',
@@ -29,13 +28,30 @@ const connection = require('./UserController');
             const { title, description, raca } = req.body;
             const user_id = req.headers.authorization;
     
-            const [id] = await connection('casos').insert({
+            const [ id ] = await connection('casos').insert({
                 title,
                 description,
                 raca,
-                ong_id,
+                user_id,
             });
     
             return res.json({ id });
         },
+        async delete(req, res) {
+            const { id } = req.params;
+            const user_id = req.headers.authorization;
+    
+            const caso = await connection('casos')
+                .where('id', id)
+                .select('user_id')
+                .first();
+    
+            if(caso.user_id !== user_id) {
+                return res.status(401).json({ error: 'Operation not permitted.'});
+            }
+    
+            await connection('casos').where('id', id).delete();
+    
+            return res.status(204).send();
+        }
     }
