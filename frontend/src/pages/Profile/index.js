@@ -65,7 +65,7 @@ export default function Profile() {
             <strong>DESCRIÇÃO:</strong>
             <p>{casos.description}</p>
 
-            <strong>VALOR:</strong>
+            <strong>RACA:</strong>
             <p>
             <p>{casos.raca}</p>
             </p>
