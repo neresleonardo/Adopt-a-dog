@@ -9,8 +9,7 @@
 
 body {
   font: 400 14px Roboto, sans-serif;
-  background-color: #131217;
-  background-size: cover;
+  background-image: url('./asserts/logo.png') ;
   -webkit-font-smoothing: antialiased;
 }
 
