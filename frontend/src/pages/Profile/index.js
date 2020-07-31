@@ -43,10 +43,10 @@ export default function Profile() {
   return (
     <div className="profile-container">
       <header>
-        <span>Bem vinda, {userName}</span>
+        <span>Bem vindo(a), {userName}</span>
 
         <Link to="/casos/new" className="button">
-          Cadastrar novo caso
+          Cadastrar novo cachorro
         </Link>
 
         <button type="button" onClick={handleLogout}>
@@ -54,7 +54,7 @@ export default function Profile() {
         </button>
       </header>
 
-      <h1> Casos cadastrados</h1>
+      <h1> Cachorros cadastrados</h1>
 
       <ul>
         {casos.map(casos => (
@@ -80,5 +80,6 @@ export default function Profile() {
         ))}
       </ul>
     </div>
+  
   );
 }

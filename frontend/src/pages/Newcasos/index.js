@@ -40,9 +40,9 @@ export default function NewCasos() {
     <div className="new-incident-container">
       <div className="content">
         <section>
-          <h1>Cadastrar novo caso</h1>
+          <h1>Cadastrar um novo cachorro</h1>
           <p>
-            Descreva o cachorro em detalhadamente para encontrar um dono para ele.
+            Descreva o cachorro detalhadamente para encontrar um dono para ele.
           </p>
 
           <Link to="/" className="back-link">
@@ -55,16 +55,19 @@ export default function NewCasos() {
           <input
             placeholder="Título do caso"
             value={title}
+            required
             onChange={e => setTitle(e.target.value)}
           />
           <textarea
             placeholder="Descrição"
             value={description}
+            required
             onChange={e => setDescription(e.target.value)}
           />
           <input
-            placeholder="Valor em reais"
+            placeholder="Raca"
             value={raca}
+            required
             onChange={e => setValue(e.target.value)}
           />
 

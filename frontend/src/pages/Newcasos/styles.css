@@ -14,7 +14,8 @@
 .new-incident-container .content  {
     width: 100%;
     padding: 96px;
-    background: #f7f7f5;
+    background: #1d1c24;
+    border-radius: 20px;
     box-shadow: 0 0 100px rgba(0,0,0.0.1);
     border-radius: 8px;
 
